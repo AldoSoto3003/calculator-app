@@ -17,7 +17,25 @@ export const useCalculator = () => {
 
     useEffect(() => {
         setFormula(number);
-    },[number])
+    },[number]);
+
+    const clean = () => {
+        setNumber('0')
+        setFormula('0')
+        setPrevNumber('0')
+
+        lastOperation.current = undefined;
+    };
+
+    const toggleSign = () => {
+        if (number.startsWith('-')) return setNumber(number.slice(1))
+        setNumber('-' + number)
+    };
+
+    const deleteLastDigit = () => {
+        if (number.length == 1) return setNumber('0')
+        setNumber(number.slice(0, -1))
+    }
 
     const buildNumber = ( numberString: string ) => {
         // Check if decimal point alredy exists
@@ -54,5 +72,8 @@ export const useCalculator = () => {
 
         // Methods
         buildNumber,
+        toggleSign,
+        deleteLastDigit,
+        clean,
     }
 }

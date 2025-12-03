@@ -8,7 +8,7 @@ import { globalStyles } from '@/styles/global-styles'
 
 const CalculatorApp = () => {
   
-    const { formula, buildNumber } = useCalculator();
+    const { formula, buildNumber, deleteLastDigit, toggleSign, clean } = useCalculator();
 
     return (
         <View style={ globalStyles.calcutorContainer }>
@@ -20,9 +20,9 @@ const CalculatorApp = () => {
 
             {/* Filas de botones */}
             <View style={ globalStyles.row }>
-                <CalculatorBotton label="C" blackText color={Colors.lightGray} onPress={() => buildNumber("C")}/>
-                <CalculatorBotton label="+/-" blackText color={Colors.lightGray} onPress={() => buildNumber("+/-")}/>
-                <CalculatorBotton label="del" blackText color={Colors.lightGray} onPress={() => buildNumber("del")}/>
+                <CalculatorBotton label="C" blackText color={Colors.lightGray} onPress={() => clean()}/>
+                <CalculatorBotton label="+/-" blackText color={Colors.lightGray} onPress={() => toggleSign()}/>
+                <CalculatorBotton label="del" blackText color={Colors.lightGray} onPress={() => deleteLastDigit()}/>
                 <CalculatorBotton label="%" color='orange' onPress={() => buildNumber("÷")}/>
             </View>
 
