@@ -38,6 +38,17 @@
             "backgroundColor": "#000000"
           }
         }
+      ],
+      [
+        "expo-navigation-bar",
+        {
+          "backgroundColor": "#ffffff",
+          "barStyle": "light",
+          "borderColor": "#ffffff",
+          "visibility": "visible",
+          "behavior": "inset-swipe",
+          "position": "relative"
+        }
       ]
     ],
     "experiments": {
