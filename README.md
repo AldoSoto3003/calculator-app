@@ -1,4 +1,4 @@
-# IOS calculator app clon
+# IOS calculator clon build with REACT NATIVE and EXPO.
 
 This is my first project using react native.
 
